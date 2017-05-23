@@ -10,19 +10,17 @@ npm install mofron-layout-grid
 ```js
 try {
     let mf   = require('mofron');
-    require('mofron-comp-text');
-    require('mofron-layout-grid');
+    let Text = require('mofron-comp-text');
+    let Grid = require('mofron-layout-grid');
 
     new mf.Component({
-        addLayout : new mf.layout.Grid([50,50]),    // the sum must be 100
-        child     : [ 
-                      new mf.comp.Text('TEXT_1'),
-                      new mf.comp.Text('TEXT_2'),
-                      new mf.comp.Text('TEXT_3')    // word wrap
+        addLayout : new Grid([50,50]),  // the sum must be 100
+        child     : [ Text('TEXT_1'),
+                      Text('TEXT_2'),
+                      Text('TEXT_3')    // word wrap
                     ],
         visible   : true
     });
-
 } catch (e) {
     console.error(e.stack);
 }
