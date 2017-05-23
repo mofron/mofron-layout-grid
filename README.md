@@ -14,11 +14,11 @@ try {
     require('mofron-layout-grid');
 
     new mf.Component({
-        addLayout : new mf.layout.Grid([50,50]),
+        addLayout : new mf.layout.Grid([50,50]),    // the sum must be 100
         child     : [ 
                       new mf.comp.Text('TEXT_1'),
                       new mf.comp.Text('TEXT_2'),
-                      new mf.comp.Text('TEXT_3')    // wordwrap
+                      new mf.comp.Text('TEXT_3')    // word wrap
                     ],
         visible   : true
     });
