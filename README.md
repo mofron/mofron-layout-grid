@@ -1,5 +1,5 @@
 # mofron-layout-grid
-grid layout for mofcon
+grid layout for [mofron](https://github.com/simpart/mofron)
 
 # install
 ```bash
