@@ -60,9 +60,6 @@ mofron.layout.Grid = class extends mofron.Layout {
             for (let idx_val in val) {
                 sum += val[idx_val];
             }
-            if (100 !== sum) {
-                throw new Error('invalid parameter');
-            }
             this.m_value = val;
         } catch (e) {
             console.error(e.stack);
@@ -70,5 +67,4 @@ mofron.layout.Grid = class extends mofron.Layout {
         }
     }
 }
-mofron.layout.grid = {};
 module.exports = mofron.layout.Grid;
