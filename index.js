@@ -14,6 +14,24 @@ mofron.layout.Grid = class extends mofron.Layout {
             super();
             this.name('Grid');
             this.prmOpt(po);
+            this.getParam().check(
+                (rate) => {
+                    try {
+                        if (false === Array.isArray(rate)) {
+                            throw new Error('invalid parameter');
+                        }
+                        for (let ridx in rate) {
+                            if ('number' !== typeof rate[ridx]) {
+                                throw new Error('invalid parameter');
+                            }
+                        }
+                    } catch (e) {
+                        console.error(e.stack);
+                        throw e;
+                    }
+                }
+            );
+            
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -22,9 +40,6 @@ mofron.layout.Grid = class extends mofron.Layout {
     
     contents (idx, tgt) {
         try {
-            if ((null === this.value()) || (0 === this.value().length)) {
-                throw new Error('emply value');
-            }
             if (0 === idx) {
                 this.component().style({
                     'display'   : 'flex',
