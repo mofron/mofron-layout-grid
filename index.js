@@ -13,25 +13,8 @@ mofron.layout.Grid = class extends mofron.Layout {
         try {
             super();
             this.name('Grid');
+            this.prmMap('rate');
             this.prmOpt(po);
-            this.getParam().check(
-                (rate) => {
-                    try {
-                        if (false === Array.isArray(rate)) {
-                            throw new Error('invalid parameter');
-                        }
-                        for (let ridx in rate) {
-                            if ('number' !== typeof rate[ridx]) {
-                                throw new Error('invalid parameter');
-                            }
-                        }
-                    } catch (e) {
-                        console.error(e.stack);
-                        throw e;
-                    }
-                }
-            );
-            
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -46,7 +29,7 @@ mofron.layout.Grid = class extends mofron.Layout {
                     'flex-wrap' : 'wrap'
                 });
             }
-            let wid = this.value()[(idx % this.value().length)] + '%';
+            let wid = this.rate()[(idx % this.rate().length)] + '%';
             if ('function' === typeof tgt['width']) {
                 tgt.width(wid);
             } else {
@@ -58,6 +41,27 @@ mofron.layout.Grid = class extends mofron.Layout {
         }
     }
     
+    rate (prm) {
+        try {
+            if (undefined === prm) {
+                /* getter */
+                return (undefined === this.m_rate) ? [25,25,25,25] : this.m_rate;
+            }
+            /* setter */
+            if (false === Array.isArray(prm)) {
+                throw new Error('invalid parameter');
+            }
+            for (let ridx in prm) {
+                if ('number' !== typeof prm[ridx]) {
+                    throw new Error('invalid parameter');
+                }
+            }
+            this.m_rate = prm;
+        } catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
 }
 module.exports = mofron.layout.Grid;
 /* end of file */
