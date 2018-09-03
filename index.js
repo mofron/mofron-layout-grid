@@ -29,12 +29,7 @@ mofron.layout.Grid = class extends mofron.Layout {
                     'flex-wrap' : 'wrap'
                 });
             }
-            let wid = this.rate()[(idx % this.rate().length)] + '%';
-            if ('function' === typeof tgt['width']) {
-                tgt.width(wid);
-            } else {
-                tgt.style({ 'width' : wid });
-            }
+            tgt.width(this.rate()[(idx % this.rate().length)] + '%');
         } catch (e) {
             console.error(e.stack);
             throw e;
