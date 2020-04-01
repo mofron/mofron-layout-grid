@@ -23,14 +23,14 @@ npm install mofron mofron-layout-grid
 </require>
 <div>
     <layout>
-        <Grid height=1rem>$(25,40,35)</Grid>
+        <Grid height=1rem>[25,40,35]</Grid>
     </layout>
-    <div color2=$(250,230,230)></div>
-    <div color2=$(230,250,230)></div>
-    <div color2=$(230,230,250)></div>
-    <div color2=$(240,220,220)></div>
-    <div color2=$(220,240,220)></div>
-    <div color2=$(220,220,240)></div>
+    <div color2=[250,230,230]></div>
+    <div color2=[230,250,230]></div>
+    <div color2=[230,230,250]></div>
+    <div color2=[240,220,220]></div>
+    <div color2=[220,240,220]></div>
+    <div color2=[220,220,240]></div>
 </div>
 ```
 
