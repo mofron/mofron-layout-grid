@@ -21,7 +21,7 @@ module.exports = class extends mofron.class.Layout {
     constructor (p1) {
         try {
             super();
-            this.name("Grid");
+            this.modname("Grid");
             this.shortForm("ratio");
             /* init config */
             this.confmng().add("ratio",  { type: "array", init: [25,25,25,25] });
