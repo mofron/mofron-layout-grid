@@ -18,9 +18,9 @@ npm install mofron mofron-layout-grid
 
 # Sample
 ```html
-<require>
+<setting>
     <tag load="mofron-layout-grid">Grid</tag>
-</require>
+</setting>
 <div>
     <layout>
         <Grid height=1rem>[25,40,35]</Grid>
